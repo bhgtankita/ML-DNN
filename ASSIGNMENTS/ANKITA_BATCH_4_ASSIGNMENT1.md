@@ -41,7 +41,7 @@ One Epoch is when an entire dataset is passed forward and backward through the n
 
 If you want to teach your network to recognize the letters of the alphabet, 100 epochs would mean you have 2600 individual training trials.
 
-**$\color{Blue}1x1 Convolution$**
+**$\color{Blue}1x1$ $\color{Blue}Convolution$**
 
 1x1 convolution filter will be represented as 1x1xk, where k is number of filters which will turn into number of feature maps. This reduces the depth of the feature maps.
 
@@ -57,7 +57,7 @@ Example of 1x1 kernel with 32 filter :
 
 ![](https://github.com/bhgtankita/ML-DNN/blob/master/images/1X1%20Example.PNG?raw=true)
 
-**$\color{Blue}3x3 convolution$**
+**$\color{Blue}3x3$ $\color{Blue}convolution$**
 
 3x3 Convolutio is most commonly used for 2D input data. 
 
@@ -65,11 +65,11 @@ Animated representation of 3x3 Convolution :
 
 ![](https://github.com/bhgtankita/ML-DNN/blob/master/images/3x3%20Convolution.gif?raw=true)
 
-**$\color{Blue}Feature Maps$**
+**$\color{Blue}Feature$ $\color{Blue}Maps$**
 
 Output of the Convolution layer is called Feature map or Activation map. In convolutional neural networks, the feature map is the output of one filter applied to the previous layer. A given filter is drawn across the entire previous layer, moved one pixel at a time. Each position results in an activation of the neuron and the output is collected in the feature map. The main logic in machine learning for doing so is to present the learning algorithm with data that it is better able to regress or classify.
 
-**$\color{Blue}Feature Engineering$**
+**$\color{Blue}Feature$ $\color{Blue}Engineering$**
 
 Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process. Feature Engineering is an art.
 
@@ -83,7 +83,7 @@ Steps which are involved while solving any problem in machine learning are as fo
 
 Feature engineering is the most important art in machine learning which creates the huge difference between a good model and a bad model. Let’s see what feature engineering covers.
 
-**$\color{Blue}Activation Function$**
+**$\color{Blue}Activation$ $\color{Blue}Function$**
 
 Result of a dot product between the filter and a small chunk of the
 image is a single number, i.e. activation. Activation will be transformed using an activation function, e.g., sigmoid or ReLU. Convolution results in an activation map.
@@ -91,7 +91,7 @@ image is a single number, i.e. activation. Activation will be transformed using 
 
 ![](https://github.com/bhgtankita/ML-DNN/blob/master/images/Activation%20Functions.PNG?raw=true)
 
-**$\color{Blue}Receptive Field$**
+**$\color{Blue}Receptive$ $\color{Blue}Field$**
 
 In typical Nueral network each neuron is connected to a neuron in the hidden layer however when dealing with high dimension inputs like images, it is impractical to connect neurons to all neurons in the previous volume. In a CNN only small region of input layer neurons connect neurons in the hidden layer this regions are refered as receptive field.  For a single neuron it is equivalent to the size of the filter size. Each neuron has a different receptive field.
 
@@ -110,17 +110,17 @@ For example, input image has 32x32x3 (3 channels for RGB) and receptive feild or
 
 **Examples of use of MathJax in Markdown**
 
-1. Cost Function
+1. Cost Function :
 $$J(\theta) = \frac{1}{2m}{\sum_{i=1}^m (h_\theta(x_i) - y_i)^2}$$
 
-2. Gradient Descent
+2. Gradient Descent :
 $$\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta_0 , \theta_1)$$
 
-3. Normal Equation
+3. Normal Equation :
 $$\theta = (X^TX)^{-1} X^Ty$$
 
-4. Sigmoid Function
+4. Sigmoid Function :
 $$\sigma(x) = \frac{1}{1 + e^{-a}}$$
 
-5. Derivative of sigmoid
+5. Derivative of sigmoid :
 $$\frac{d\sigma(x)}{d(x)} = \sigma(x) . (1 - \sigma(x))$$
