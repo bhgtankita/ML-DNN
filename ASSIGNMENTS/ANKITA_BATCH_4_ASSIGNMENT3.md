@@ -83,18 +83,37 @@ Main motivation of such convolutions is to reduce computational complexity while
 
 ![](https://github.com/bhgtankita/ML-DNN/blob/master/images/group_convolutions.png?raw=true)
 
+
+### Dropout
+
+Its a technique for regularization which help to resolve overfitting issue. Imagine we have one layer that connects to another layer. Values that go from one layer to next layer called activations. Now take those activations and randomly for every example you train your network on, set half of them to zero. Completely randomly you are taking half of the data that is flowing through your networkand just destroy it and then randomly again. 
+
+Your network can never rely on any given activation because they might be squashed at any given moment. So it is forced to learn a redudant representation for everything to make sure at least some of the information remains. 
+
+![](https://github.com/bhgtankita/ML-DNN/blob/master/images/Dropout.png?raw=true)
+
+![](https://mlblr.com/images/dropout.gif)
+
 -----------
 ### Additional Information :
 
-Winograd's :
+**Winograd's :**
 7x7 = 1x7 followed by 7x1
 Error is 0.3%
 
-Kernel Size: 
+**Kernel Size:**
 The kernel size defines the field of view of the convolution. A common choice for 2D is 3 — that is 3x3 pixels.
 
-Stride: 
+**Stride:**
 The stride defines the step size of the kernel when traversing the image. While its default is usually 1, we can use a stride of 2 for downsampling an image similar to MaxPooling.
 
-Padding: 
+**Padding:**
 The padding defines how the border of a sample is handled. A (half) padded convolution will keep the spatial output dimensions equal to the input, whereas unpadded convolutions will crop away some of the borders if the kernel is larger than 1.
+
+**Label Smoothing:**
+
+Regularization was first proposed in 1980's.
+
+Instead of hard labels like 0 and 1, smoothen the labels by making them close to 0 and 1
+
+For example 0, 1 -> 0.1, 0.9
