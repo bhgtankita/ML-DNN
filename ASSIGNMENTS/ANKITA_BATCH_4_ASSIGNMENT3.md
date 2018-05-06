@@ -86,8 +86,11 @@ Main motivation of such convolutions is to reduce computational complexity while
 
 ### Dropout
 
-Its a technique for regularization which help to resolve overfitting issue. Imagine we have one layer that connects to another layer. Values that go from one layer to next layer called activations. Now take those activations and randomly for every example you train your network on, set half of them to zero. Completely randomly you are taking half of the data that is flowing through your networkand just destroy it and then randomly again. 
+Its a technique for regularization which help to resolve overfitting issue. Imagine we have one layer that connects to another layer. Values that go from one layer to next layer called activations. Now take those activations and randomly for every example you train your network on, set half of them to zero. Completely randomly you are taking half of the data that is flowing through your network and just destroy it and then randomly again. 
 
+Setting to 0 the output of each hidden neuron with probability 0.5. The neurons which are dropped out in this way do not contribute to the forward pass and do not participate in back-propogation.  
+
+Why do we need to implement dropout?
 Your network can never rely on any given activation because they might be squashed at any given moment. So it is forced to learn a redudant representation for everything to make sure at least some of the information remains. 
 
 ![](https://github.com/bhgtankita/ML-DNN/blob/master/images/Dropout.png?raw=true)
@@ -117,3 +120,31 @@ Regularization was first proposed in 1980's.
 Instead of hard labels like 0 and 1, smoothen the labels by making them close to 0 and 1
 
 For example 0, 1 -> 0.1, 0.9
+
+**One-hot Vector:**
+
+Imagine If you print y_train[:10], you'd get array([5, 0, 4, 1, 9, 2, 1, 3, 1, 4], dtype=uint8). This means if we want to predict, the network must output "5" as the value. This is trickier as for 9, one need to output "9" and for 5, "5". How would loss function behave in such a case? Moreover, what about predicting A, B...Z?
+
+Easier method is to output one-hot vector for each digit. For e.g. (0, 0, 0, 0, 0, 1, 0, 0, 0, 0)_ can represent 5 where the 6th varialbe is 1. (0, 0, 0, 0, 0, 0, 0, 0, 0, 1)_ can represent 9. Similarly, (1, 0, 0, 0, 0, 0, 0, 0, 0, ...)_can represent _A.
+
+**Regularization:**
+
+Regularization helps us tune and control our model complexity, ensuring that our models are better at making (correct) classifications — or more simply, the ability to generalize.
+
+If we don’t apply regularization, our classifiers can easily become too complex and overfit to our training data, in which case we lose the ability to generalize to our testing data (and data points outside the testing set as well).
+
+Similarly, without applying regularization we also run the risk of underfitting. In this case, our model performs poorly on the training our — our classifier is not able to model the relationship between the input data and the output class labels.
+
+Underfitting is relatively easy to catch — you examine the classification accuracy on your training data and take a look at your model.
+
+If your training accuracy is very low and your model is excessively simple, then you are likely a victim of underfitting. The normal remedy to underfitting is to essentially increase the number of parameters in your model, thereby increasing complexity.
+
+While you can certainly monitor your training accuracy and recognizing when your classifier is performing too well on the training data and not good enough on the testing data, it becomes harder to correct.
+
+There is also the problem that you can walk a very fine line between model complexity — if you simplify your model too much, then you’ll be back to underfitting.
+
+A better approach is to apply regularization which will help our model generalize and lead to less overfitting. The best way to understand regularization is to see the implications it has on our loss function.
+
+**Softmax**
+
+it’s the final layer at the end of the network that yields your actual probability scores for each class label.
