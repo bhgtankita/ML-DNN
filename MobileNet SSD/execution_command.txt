@@ -1,0 +1,10 @@
+python deep_learning_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel --image images/example_03.jpg
+
+python deep_learning_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel --image images/example_01.jpg
+
+python deep_learning_object_detection_v.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel --image images/Mission_Impossible.mp4
+
+Link
+OpenCV’s dnn  module:
+MobileNets + Single Shot Detectors along with OpenCV 3.3’s brand new (totally overhauled) dnn  module to detect objects in images
+https://www.pyimagesearch.com/2017/09/11/object-detection-with-deep-learning-and-opencv/
