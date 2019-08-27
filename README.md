@@ -1,2 +1,1 @@
-# ML-DNN
-Deep Nueral Network
+# Deep Nueral Network
